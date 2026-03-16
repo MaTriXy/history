@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="https://github.com/yorkeccak/history/stargazers"><img src="https://img.shields.io/github/stars/yorkeccak/history?style=flat&color=yellow" alt="GitHub Stars"></a>
+  <a href="https://github.com/yorkeccak/history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yorkeccak/history" alt="License"></a>
+  <a href="https://github.com/yorkeccak/history/network/members"><img src="https://img.shields.io/github/forks/yorkeccak/history?style=flat" alt="Forks"></a>
+  <a href="https://github.com/yorkeccak/history/graphs/contributors"><img src="https://img.shields.io/github/contributors/yorkeccak/history" alt="Contributors"></a>
+</p>
+
 # History
 
 **[history.valyu.ai](https://history.valyu.ai)**
@@ -98,7 +105,7 @@ Self-hosted mode is the recommended way to run History locally. It requires only
 ### Prerequisites
 
 - Node.js 18+
-- pnpm, npm, or yarn
+- pnpm (`npm install -g pnpm`)
 - Valyu DeepResearch API key ([get one free at platform.valyu.ai](https://platform.valyu.ai))
 - Mapbox access token ([get one free at mapbox.com](https://account.mapbox.com))
 
@@ -113,8 +120,6 @@ Self-hosted mode is the recommended way to run History locally. It requires only
 2. **Install dependencies**
    ```bash
    pnpm install
-   # or npm install
-   # or yarn install
    ```
 
 3. **Set up environment variables**
@@ -138,8 +143,6 @@ Self-hosted mode is the recommended way to run History locally. It requires only
 4. **Run the development server**
    ```bash
    pnpm dev
-   # or npm run dev
-   # or yarn dev
    ```
 
 5. **Open your browser**
@@ -189,7 +192,7 @@ Self-hosted mode is the recommended way to run History locally. It requires only
 
 ## App Modes
 
-History has two operating modes:
+History runs in self-hosted mode:
 
 ### Self-Hosted Mode (Recommended)
 ```env
@@ -204,17 +207,19 @@ NEXT_PUBLIC_APP_MODE=self-hosted
 - Works completely offline (except API calls)
 - Perfect for local usage and contributing
 
-### Valyu Mode
-```env
-NEXT_PUBLIC_APP_MODE=valyu
-```
+## Deploy to Vercel
 
-**Note:** Valyu OAuth apps will be in general availability soon. Currently client id/secret are not publicly available. Contact contact@valyu.ai if you need access.
+The quickest way to get History running in production:
 
-**Features:**
-- Full authentication with Valyu OAuth
-- Cloud database storage with Supabase
-- Used for the hosted version at history.valyu.ai
+1. **Fork this repository** to your GitHub account
+2. **Create a new project** on [vercel.com](https://vercel.com) and import your fork
+3. **Add environment variables** in Vercel project settings (Settings > Environment Variables):
+   - `NEXT_PUBLIC_APP_MODE` = `self-hosted`
+   - `VALYU_API_KEY` = your Valyu API key
+   - `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` = your Mapbox access token
+4. **Deploy** - Vercel handles the rest
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyorkeccak%2Fhistory&env=NEXT_PUBLIC_APP_MODE,VALYU_API_KEY,NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN&envDescription=API%20keys%20needed%20for%20History&envLink=https%3A%2F%2Fgithub.com%2Fyorkeccak%2Fhistory%23quick-start-self-hosted)
 
 ## Getting API Keys
 
@@ -307,6 +312,8 @@ History is fully open-source. Contributions are welcome and appreciated.
 5. Commit your changes (`git commit -m 'Add amazing feature'`)
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
+
+For bugs or feature requests, [open an issue](https://github.com/yorkeccak/history/issues) or start a [discussion](https://github.com/yorkeccak/history/discussions).
 
 ### Areas for Contribution
 
